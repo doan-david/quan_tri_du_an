@@ -52,12 +52,16 @@ ul.list_menu li a{
 }
 .sidebar {
     border: 1px solid #6a00ff;
-    height: 500px;
-    width: 20%;
-    background: #d7f4ff;
+    height: auto;
+    width: 100%;
+    background: #e7f9ff;
     margin-top: 5px;
     margin-left: 5px;
     float: left;
+}
+.sidebar h5{
+    margin-top: 5px;
+    margin-left: 5px;
 }
 ul.list_sidebar {
     padding: 0;
@@ -81,7 +85,7 @@ ul.list_sidebar li a{
 .maincontent{
     /* border: 1px solid #4ea8d2; */
     height: auto;
-    width :77%;
+    width :100%;
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 5px;
@@ -90,6 +94,7 @@ ul.list_sidebar li a{
     /* background: #e8ffff; */
 }
  ul.list_product {
+    display: flex;
     padding: 10px;
     margin: 0;
     list-style: none;
@@ -97,7 +102,7 @@ ul.list_sidebar li a{
     word-wrap: break-word;
 }
 ul.list_product li{
-    width: 18%;
+    width: 90%;
     border: 1px dashed #ffbcbc;
     margin: 5px;
     padding: 0;
@@ -179,11 +184,13 @@ p.cate_product{
 }
 /*chi tiet bai viet */
 ul.baiviet{
+    width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 ul.baiviet li{
+    width: 100%;
     padding: 10px;
     border: 1px dashed #2fc1d4;
 }
@@ -194,19 +201,20 @@ ul.list_baiviet {
     list-style: none;
     width: 100%;
     word-wrap: break-word;
+    display: flex;
 }
 ul.list_baiviet li{
-    width: 28%;
+    width: 95%;
     border: 1px dashed #ffbcbc;
     margin: 5px;
     padding: 10px;
     margin-right:10px;
     float:left;
     background: #f8fff0;
-    height: 350px;
+    height: 450px;
 }
 ul.list_baiviet li img{
-    width: 80%;
+    width: 100%;
     padding:5px 10px 0;
     margin-left: 10px;
     height: 180px;
