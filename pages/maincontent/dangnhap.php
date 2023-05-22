@@ -1,4 +1,26 @@
-
+<?php
+    if(isset($_POST['dangnhap'])){
+        $email=$_POST['email'];
+        $matkhau=md5($_POST['password']);
+        $sql="SELECT * FROM tbl_dangky WHERE email='".$email."' AND matkhau='".$matkhau."' LIMIT 1";
+        $row=mysqli_query($mysqli,$sql);
+        $count=mysqli_num_rows($row);
+        
+        if($count>0){
+            $row_data=mysqli_fetch_array($row);
+            $_SESSION['dangky']= $row_data['tenkhachhang'];
+            $_SESSION['email']=$row_data['email'];
+            $_SESSION['id_khachhang']= $row_data['id_dangky'];
+            if(isset($_SESSION['dangky'])){
+                echo 'Xin chào: '.'<span style="color:green">'.$_SESSION['dangky'].'</span>'.' '.' đã đăng nhập thành công';
+                echo $_SESSION['id_khachhang'];
+            }
+            header("Location:index.php?quanly=giohang");
+        }else{
+            echo '<p style="color:green;">tài khoản hoặc mật khẩu không chính xác, vui lòng nhập lại;</p>';
+        }
+    }
+?>
 <form action="" method="POST" autocomplete="off">
             
         

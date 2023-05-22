@@ -1,4 +1,21 @@
-
+<?php
+    if(isset($_POST['dangky'])){
+        $tenkhachhang=$_POST['hovaten'];
+        $email=$_POST['email'];
+        $dienthoai=$_POST['dienthoai'];
+        $diachi=$_POST['diachi'];
+        $matkhau=md5($_POST['matkhau']);
+        $sql_dangky=mysqli_query($mysqli,"INSERT INTO tbl_dangky(tenkhachhang,email,diachi,matkhau,dienthoai) VALUE('".$tenkhachhang."','".$email."','".$diachi."','".$matkhau."','".$dienthoai."')");
+        if($sql_dangky){
+            echo'<p style="color:green">Bạn đã đăng ký thành công</p>';
+            $_SESSION['dangky']=$tenkhachhang;
+            $_SESSION['email']=$email;
+            
+            $_SESSION['id_khachhang']=mysqli_insert_id($mysqli);
+            header('Location:index.php?quanly=giohang');
+        }
+    }
+?>
 <p>Đăng ký thành viên</p>
 <form action="" method="POST">
     <table class="dangky" border="1">
